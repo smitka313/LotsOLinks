@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Link-A-Palooza!</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #f97316;
+      --accent-2: #38bdf8;
+      --soft: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #312e81 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      color: white;
+      text-align: center;
+      padding: 48px 20px 28px;
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      margin: 0;
+      letter-spacing: -2px;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      max-width: 820px;
+      margin: 14px auto 0;
+      color: #dbeafe;
+      line-height: 1.5;
+    }
+
+    .random-box {
+      max-width: 900px;
+      margin: 0 auto 30px;
+      padding: 22px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 24px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .random-box button {
+      border: none;
+      background: linear-gradient(135deg, var(--accent), #facc15);
+      color: #111827;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .random-box button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    }
+
+    .random-result {
+      margin-top: 18px;
+      min-height: 55px;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .random-result a {
+      color: #fef3c7;
+      font-weight: 800;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+
+    .random-result a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .category {
+      margin: 34px 0;
+    }
+
+    .category h2 {
+      color: white;
+      font-size: 1.6rem;
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.28);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 190px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.35);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      color: #111827;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.45;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+
+    .card a {
+      display: inline-block;
+      text-decoration: none;
+      color: #0369a1;
+      font-weight: 800;
+      margin-top: auto;
+    }
+
+    .card a:hover { text-decoration: underline; }
+
+    .tag {
+      align-self: flex-start;
+      background: #e0f2fe;
+      color: #075985;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      color: #cbd5e1;
+      text-align: center;
+      padding: 24px 20px 40px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Link-A-Palooza!</h1>
+    <p>A curated collection of fun distractions, creative tools, interactive curiosities, and secretly useful websites for teachers.</p>
+  </header>
+
+  <main>
+    <section class="random-box" aria-label="Random site picker">
+      <button onclick="pickRandomSite()">🎲 Pick a Random Site</button>
+      <div id="randomResult" class="random-result">Click the button for a surprise link from the collection.</div>
+    </section>
+
+    <section class="category">
+      <h2>🎨 Creativity & Music</h2>
+      <div class="grid">
+        <article class="card"><span class="tag">Music</span><h3>Viola the Bird</h3><p>An interactive AI music experiment where you control a bird playing a string instrument in real time.</p><a href="https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp&hl=en" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Music</span><h3>Blob Opera</h3><p>Create opera music by dragging animated blobs that harmonize automatically.</p><a href="https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?cp=e30.&hl=en" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">AI Music</span><h3>Suno AI</h3><p>An AI music generator that creates full songs with vocals and instruments from text prompts.</p><a href="https://suno.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Sound</span><h3>Patatap</h3><p>Press keys to create music and animations—simple, creative, and instantly engaging.</p><a href="https://patatap.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Audio</span><h3>A Soft Murmur</h3><p>Mix ambient sounds like rain, wind, waves, and coffee shops to build a custom soundscape.</p><a href="https://asoftmurmur.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">AI Drawing</span><h3>AutoDraw</h3><p>AI turns rough doodles into clean icons—great alongside Quick, Draw! and quick creative activities.</p><a href="https://www.autodraw.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Music</span><h3>Incredibox</h3><p>A polished drag-and-drop music creation app using beatboxing characters.</p><a href="https://www.incredibox.com/" target="_blank" rel="noopener">Open site →</a></article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>🌎 Geography, Exploration & Science</h2>
+      <div class="grid">
+        <article class="card"><span class="tag">Geography</span><h3>OpenGuessr</h3><p>A free geography game where you guess locations around the world using visual clues.</p><a href="https://www.openguessr.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Exploration</span><h3>MapCrunch</h3><p>Instantly drops you into a random Google Street View location anywhere in the world.</p><a href="https://www.mapcrunch.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">STEM</span><h3>The Scale of the Universe 2</h3><p>Zoom from the tiniest particles to the entire universe—great for perspective and STEM connections.</p><a href="https://htwins.net/scale2/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Biology</span><h3>OneZoom Tree of Life</h3><p>An interactive zoomable tree of life showing relationships among living organisms.</p><a href="https://www.onezoom.org/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Ocean</span><h3>The Deep Sea</h3><p>Scroll down through the ocean’s depths and discover creatures at each level.</p><a href="https://neal.fun/deep-sea/" target="_blank" rel="noopener">Open site →</a></article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>🤖 AI, Puzzles & Thinking</h2>
+      <div class="grid">
+        <article class="card"><span class="tag">AI Drawing</span><h3>Quick, Draw!</h3><p>A fast-paced drawing game where a neural network guesses your sketches in real time.</p><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Language AI</span><h3>Semantris</h3><p>A Google AI word association game where you type related words and the system matches meanings.</p><a href="https://research.google.com/semantris" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">AI Builder</span><h3>Google Opal</h3><p>A Google Labs experiment for building simple AI-powered mini apps using natural language.</p><a href="https://opal.google/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Puzzle</span><h3>Cicada Detroit</h3><p>A large-scale puzzle/ARG challenge combining cryptography, riddles, and real-world exploration.</p><a href="https://www.cicadadetroit.com/" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Challenge</span><h3>Human Benchmark</h3><p>Test reaction time, memory, typing speed, and more—great for quick friendly competition.</p><a href="https://humanbenchmark.com/" target="_blank" rel="noopener">Open site →</a></article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>🎲 Weird Web & Brain Breaks</h2>
+      <div class="grid">
+        <article class="card"><span class="tag">Collection</span><h3>Neal.fun</h3><p>A collection of quirky, interactive web games and experiments with both fun and educational elements.</p><a href="https://neal.fun" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Random</span><h3>The Useless Web</h3><p>A one-button site that sends you to random, bizarre, and often hilarious websites.</p><a href="https://theuselessweb.com" target="_blank" rel="noopener">Open site →</a></article>
+        <article class="card"><span class="tag">Weird</span><h3>Pointer Pointer</h3><p>Move your mouse anywhere and it finds a photo of someone pointing exactly at that spot.</p><a href="https://pointerpointer.com/" target="_blank" rel="noopener">Open site →</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made for quick teacher-friendly fun, exploration, and occasional productive procrastination.
+  </footer>
+
+  <script>
+    const sites = [
+      { title: "Viola the Bird", url: "https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp&hl=en", description: "Control a bird playing a string instrument in real time." },
+      { title: "Blob Opera", url: "https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?cp=e30.&hl=en", description: "Create opera music with harmonizing animated blobs." },
+      { title: "Suno AI", url: "https://suno.com/", description: "Generate songs from text prompts." },
+      { title: "OpenGuessr", url: "https://www.openguessr.com/", description: "Guess real-world locations from visual clues." },
+      { title: "Quick, Draw!", url: "https://quickdraw.withgoogle.com/", description: "Draw quickly while AI guesses your sketches." },
+      { title: "Cicada Detroit", url: "https://www.cicadadetroit.com/", description: "Solve cryptography, riddles, and ARG-style puzzles." },
+      { title: "Neal.fun", url: "https://neal.fun", description: "Explore quirky interactive games and web experiments." },
+      { title: "The Useless Web", url: "https://theuselessweb.com", description: "Jump to random strange corners of the internet." },
+      { title: "Semantris", url: "https://research.google.com/semantris", description: "Play a word association game powered by AI." },
+      { title: "Google Opal", url: "https://opal.google/", description: "Build AI mini apps with natural language." },
+      { title: "Pointer Pointer", url: "https://pointerpointer.com/", description: "Find photos of people pointing exactly where your cursor is." },
+      { title: "Patatap", url: "https://patatap.com/", description: "Create music and animations by pressing keys." },
+      { title: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "Mix ambient sounds into a custom soundscape." },
+      { title: "The Scale of the Universe 2", url: "https://htwins.net/scale2/", description: "Zoom from tiny particles to the observable universe." },
+      { title: "MapCrunch", url: "https://www.mapcrunch.com/", description: "Explore random Google Street View locations." },
+      { title: "AutoDraw", url: "https://www.autodraw.com/", description: "Turn rough doodles into clean icons with AI." },
+      { title: "OneZoom Tree of Life", url: "https://www.onezoom.org/", description: "Explore a zoomable tree of life." },
+      { title: "Incredibox", url: "https://www.incredibox.com/", description: "Create music with drag-and-drop beatboxing characters." },
+      { title: "Human Benchmark", url: "https://humanbenchmark.com/", description: "Test reaction time, memory, typing, and more." },
+      { title: "The Deep Sea", url: "https://neal.fun/deep-sea/", description: "Scroll through ocean depths and discover sea creatures." }
+    ];
+
+    function pickRandomSite() {
+      const site = sites[Math.floor(Math.random() * sites.length)];
+      const result = document.getElementById("randomResult");
+      result.innerHTML = `<a href="${site.url}" target="_blank" rel="noopener">${site.title}</a><br><span>${site.description}</span>`;
+    }
+  </script>
+</body>
+</html>
