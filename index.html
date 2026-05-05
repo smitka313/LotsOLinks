@@ -8,7 +8,6 @@
     :root {
       --bg: #0f172a;
       --bg2: #111827;
-      --panel: rgba(15, 23, 42, 0.78);
       --card: rgba(30, 41, 59, 0.88);
       --card-hover: rgba(51, 65, 85, 0.96);
       --text: #e5e7eb;
@@ -17,16 +16,9 @@
       --shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
       --shadow-hover: 0 26px 62px rgba(0, 0, 0, 0.48);
       --radius: 22px;
-      --amber: #f59e0b;
-      --blue: #2563eb;
-      --steel: #475569;
-      --teal: #0f766e;
-      --red: #991b1b;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -40,10 +32,7 @@
       padding: 32px 18px 48px;
     }
 
-    .wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-    }
+    .wrap { max-width: 1180px; margin: 0 auto; }
 
     header {
       text-align: center;
@@ -101,9 +90,7 @@
       filter: saturate(1.12);
     }
 
-    button:active {
-      transform: translateY(0) scale(0.99);
-    }
+    button:active { transform: translateY(0) scale(0.99); }
 
     #randomPick {
       min-height: 48px;
@@ -198,9 +185,7 @@
       border-color: rgba(245, 158, 11, 0.36);
     }
 
-    .card:hover::before {
-      opacity: 1;
-    }
+    .card:hover::before { opacity: 1; }
 
     .icon {
       width: 54px;
@@ -234,7 +219,7 @@
       font-size: 0.96rem;
     }
 
-    .card .open-text {
+    .open-text {
       position: absolute;
       left: 22px;
       bottom: 20px;
@@ -259,14 +244,8 @@
     }
 
     @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -280,8 +259,8 @@
 <body>
   <main class="wrap">
     <header>
-      <h1>🎉 Link-A-Palooza! 🚀</h1>
-      <p class="subtitle">A teacher-friendly collection of fun distractions, creative experiments, weird web gems, and secretly useful classroom-ready links.</p>
+      <h1>🎉 Smitka's Link-A-Palooza! 🚀</h1>
+      <p class="subtitle">A collection of fun distractions, creative experiments, weird web gems, and secretly useful links.</p>
       <div class="random-row">
         <button onclick="randomSite()">🎲 Pick a Random Site</button>
         <span id="randomPick">Ready for a surprise?</span>
@@ -289,10 +268,7 @@
     </header>
 
     <section class="category creative">
-      <div class="category-header">
-        <h2>🎨 Creative & Music</h2>
-        <span class="badge">7 links</span>
-      </div>
+      <div class="category-header"><h2>🎨 Creative & Music</h2><span class="badge">7 links</span></div>
       <div class="grid">
         <a class="card" href="https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp&hl=en" target="_blank" rel="noopener noreferrer"><div class="icon">🎻</div><h3>Viola the Bird</h3><p>Control a musical bird and create playful string-instrument melodies in real time.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?cp=e30.&hl=en" target="_blank" rel="noopener noreferrer"><div class="icon">🎤</div><h3>Blob Opera</h3><p>Drag animated blobs to create surprisingly impressive AI-powered opera harmonies.</p><span class="open-text">Click card to open →</span></a>
@@ -305,37 +281,28 @@
     </section>
 
     <section class="category explore">
-      <div class="category-header">
-        <h2>🌍 Exploration & STEM</h2>
-        <span class="badge">5 links</span>
-      </div>
+      <div class="category-header"><h2>🌍 Exploration & STEM</h2><span class="badge">6 links</span></div>
       <div class="grid">
         <a class="card" href="https://www.openguessr.com/" target="_blank" rel="noopener noreferrer"><div class="icon">🌎</div><h3>OpenGuessr</h3><p>Use clues from random locations to guess where you are in the world.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://www.mapcrunch.com/" target="_blank" rel="noopener noreferrer"><div class="icon">🗺️</div><h3>MapCrunch</h3><p>Get dropped into random Google Street View locations around the globe.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://htwins.net/scale2/" target="_blank" rel="noopener noreferrer"><div class="icon">🔭</div><h3>Scale of the Universe 2</h3><p>Zoom from tiny particles to massive cosmic structures.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://www.onezoom.org/" target="_blank" rel="noopener noreferrer"><div class="icon">🌳</div><h3>OneZoom Tree of Life</h3><p>Explore a beautiful zoomable tree showing relationships among living organisms.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://neal.fun/deep-sea/" target="_blank" rel="noopener noreferrer"><div class="icon">🌊</div><h3>The Deep Sea</h3><p>Scroll through ocean depths and discover creatures at each level.</p><span class="open-text">Click card to open →</span></a>
+        <a class="card" href="https://window-swap.com/" target="_blank" rel="noopener noreferrer"><div class="icon">🪟</div><h3>Window Swap</h3><p>Look out windows from random places around the world—calm, simple, and surprisingly addictive.</p><span class="open-text">Click card to open →</span></a>
       </div>
     </section>
 
     <section class="category ai">
-      <div class="category-header">
-        <h2>🤖 AI & Interactive</h2>
-        <span class="badge">4 links</span>
-      </div>
+      <div class="category-header"><h2>🤖 AI & Interactive</h2><span class="badge">3 links</span></div>
       <div class="grid">
         <a class="card" href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer"><div class="icon">🧠</div><h3>Quick, Draw!</h3><p>Sketch quickly while a neural network tries to guess what you are drawing.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://research.google.com/semantris" target="_blank" rel="noopener noreferrer"><div class="icon">💬</div><h3>Semantris</h3><p>A Google AI word association game based on semantic relationships.</p><span class="open-text">Click card to open →</span></a>
-        <a class="card" href="https://opal.google/" target="_blank" rel="noopener noreferrer"><div class="icon">🛠️</div><h3>Google Opal</h3><p>Build small AI-powered apps and workflows using natural language.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://pointerpointer.com/" target="_blank" rel="noopener noreferrer"><div class="icon">👉</div><h3>Pointer Pointer</h3><p>Move your pointer and find a photo of someone pointing exactly there.</p><span class="open-text">Click card to open →</span></a>
       </div>
     </section>
 
     <section class="category random">
-      <div class="category-header">
-        <h2>🎲 Fun, Weird & Random</h2>
-        <span class="badge">4 links</span>
-      </div>
+      <div class="category-header"><h2>🎲 Fun, Weird & Random</h2><span class="badge">4 links</span></div>
       <div class="grid">
         <a class="card" href="https://theuselessweb.com" target="_blank" rel="noopener noreferrer"><div class="icon">🌀</div><h3>The Useless Web</h3><p>One button launches you to random, strange, hilarious corners of the internet.</p><span class="open-text">Click card to open →</span></a>
         <a class="card" href="https://neal.fun" target="_blank" rel="noopener noreferrer"><div class="icon">🌐</div><h3>Neal.fun</h3><p>A collection of clever interactive web experiments, games, and visualizations.</p><span class="open-text">Click card to open →</span></a>
@@ -344,7 +311,7 @@
       </div>
     </section>
 
-    <footer>⚙️ Built for quick breaks, curious clicks, and “wait, this is actually useful” moments. ⚙️</footer>
+    <footer>⚙️ Built for quick breaks, curious clicks, and “oh man, where did that last hour go?” moments. ⚙️</footer>
   </main>
 
   <script>
@@ -358,7 +325,7 @@
       { title: "Neal.fun", url: "https://neal.fun", emoji: "🌐" },
       { title: "The Useless Web", url: "https://theuselessweb.com", emoji: "🌀" },
       { title: "Semantris", url: "https://research.google.com/semantris", emoji: "💬" },
-      { title: "Google Opal", url: "https://opal.google/", emoji: "🛠️" },
+      { title: "Window Swap", url: "https://window-swap.com/", emoji: "🪟" },
       { title: "Pointer Pointer", url: "https://pointerpointer.com/", emoji: "👉" },
       { title: "Patatap", url: "https://patatap.com/", emoji: "🎹" },
       { title: "A Soft Murmur", url: "https://asoftmurmur.com/", emoji: "🌧️" },
@@ -373,8 +340,7 @@
 
     function randomSite() {
       const pick = sites[Math.floor(Math.random() * sites.length)];
-      const randomPick = document.getElementById("randomPick");
-      randomPick.textContent = `${pick.emoji} Random pick: ${pick.title}`;
+      document.getElementById("randomPick").textContent = `${pick.emoji} Random pick: ${pick.title}`;
       window.open(pick.url, "_blank", "noopener,noreferrer");
     }
   </script>
